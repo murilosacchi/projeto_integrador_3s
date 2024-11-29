@@ -1,3 +1,4 @@
+import '/auth/supabase_auth/auth_util.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -107,10 +108,10 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                       width: MediaQuery.sizeOf(context).width * 0.28,
                       height: MediaQuery.sizeOf(context).height * 0.45,
                       decoration: BoxDecoration(
-                        color: const Color(0xE5FFFFFF),
+                        color: Colors.white,
                         borderRadius: BorderRadius.circular(15.0),
                         border: Border.all(
-                          color: Colors.white,
+                          color: Colors.black,
                           width: 1.0,
                         ),
                       ),
@@ -143,8 +144,6 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                           MediaQuery.sizeOf(context).height *
                                               0.06,
                                       decoration: BoxDecoration(
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondaryBackground,
                                         borderRadius:
                                             BorderRadius.circular(8.0),
                                         border: Border.all(
@@ -164,9 +163,10 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                             isDense: false,
                                             labelStyle:
                                                 FlutterFlowTheme.of(context)
-                                                    .labelMedium
+                                                    .bodyMedium
                                                     .override(
                                                       fontFamily: 'Inter',
+                                                      color: Colors.black,
                                                       letterSpacing: 0.0,
                                                     ),
                                             hintText: 'Email',
@@ -259,8 +259,6 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                           MediaQuery.sizeOf(context).height *
                                               0.06,
                                       decoration: BoxDecoration(
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondaryBackground,
                                         borderRadius:
                                             BorderRadius.circular(8.0),
                                         border: Border.all(
@@ -417,13 +415,23 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                 ),
                                 FFButtonWidget(
                                   onPressed: () async {
-                                    if ((_model.emailFieldTextController.text ==
-                                            'admin') &&
-                                        (_model.passwordFieldTextController
-                                                .text ==
-                                            'admin')) {
-                                      context.pushNamed('PainelPage');
+                                    GoRouter.of(context).prepareAuthEvent();
+
+                                    final user =
+                                        await authManager.signInWithEmail(
+                                      context,
+                                      _model.emailFieldTextController.text,
+                                      _model.passwordFieldTextController.text,
+                                    );
+                                    if (user == null) {
+                                      return;
                                     }
+
+                                    await Future.delayed(
+                                        const Duration(milliseconds: 1000));
+
+                                    context.goNamedAuth(
+                                        'PainelPage', context.mounted);
                                   },
                                   text: 'Login',
                                   options: FFButtonOptions(

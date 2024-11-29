@@ -1,14 +1,13 @@
-import '/components/sidebar_widget.dart';
+import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
-import 'adicionar_page_widget.dart' show AdicionarPageWidget;
+import 'dart:async';
+import 'popup_extintor_widget.dart' show PopupExtintorWidget;
 import 'package:flutter/material.dart';
 
-class AdicionarPageModel extends FlutterFlowModel<AdicionarPageWidget> {
-  ///  State fields for stateful widgets in this page.
+class PopupExtintorModel extends FlutterFlowModel<PopupExtintorWidget> {
+  ///  State fields for stateful widgets in this component.
 
-  // Model for sidebar component.
-  late SidebarModel sidebarModel;
   // State field(s) for patrimonioTextField widget.
   FocusNode? patrimonioTextFieldFocusNode;
   TextEditingController? patrimonioTextFieldTextController;
@@ -77,15 +76,15 @@ class AdicionarPageModel extends FlutterFlowModel<AdicionarPageWidget> {
   TextEditingController? observacaoTextFieldTextController;
   String? Function(BuildContext, String?)?
       observacaoTextFieldTextControllerValidator;
+  // Stores action output result for [Backend Call - Delete Row(s)] action in Button widget.
+  List<ExtintoresRow>? deleteRowExtintor;
+  Completer<List<ExtintoresRow>>? requestCompleter;
 
   @override
-  void initState(BuildContext context) {
-    sidebarModel = createModel(context, () => SidebarModel());
-  }
+  void initState(BuildContext context) {}
 
   @override
   void dispose() {
-    sidebarModel.dispose();
     patrimonioTextFieldFocusNode?.dispose();
     patrimonioTextFieldTextController?.dispose();
 
@@ -121,5 +120,21 @@ class AdicionarPageModel extends FlutterFlowModel<AdicionarPageWidget> {
 
     observacaoTextFieldFocusNode?.dispose();
     observacaoTextFieldTextController?.dispose();
+  }
+
+  /// Additional helper methods.
+  Future waitForRequestCompleted({
+    double minWait = 0,
+    double maxWait = double.infinity,
+  }) async {
+    final stopwatch = Stopwatch()..start();
+    while (true) {
+      await Future.delayed(const Duration(milliseconds: 50));
+      final timeElapsed = stopwatch.elapsedMilliseconds;
+      final requestComplete = requestCompleter?.isCompleted ?? false;
+      if (timeElapsed > maxWait || (requestComplete && timeElapsed > minWait)) {
+        break;
+      }
+    }
   }
 }

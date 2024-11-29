@@ -1,3 +1,5 @@
+import '/auth/supabase_auth/auth_util.dart';
+import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -223,17 +225,51 @@ class _SidebarWidgetState extends State<SidebarWidget> {
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     const Icon(
-                      Icons.person_outline,
+                      Icons.person_sharp,
                       color: Colors.white,
                       size: 24.0,
                     ),
-                    Text(
-                      'Admin',
-                      style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            fontFamily: 'Inter',
-                            color: Colors.white,
-                            letterSpacing: 0.0,
+                    FutureBuilder<List<UsuariosRow>>(
+                      future: UsuariosTable().querySingleRow(
+                        queryFn: (q) => q.eqOrNull(
+                          'uid',
+                          currentUserUid,
+                        ),
+                      ),
+                      builder: (context, snapshot) {
+                        // Customize what your widget looks like when it's loading.
+                        if (!snapshot.hasData) {
+                          return Center(
+                            child: SizedBox(
+                              width: 50.0,
+                              height: 50.0,
+                              child: CircularProgressIndicator(
+                                valueColor: AlwaysStoppedAnimation<Color>(
+                                  FlutterFlowTheme.of(context).primary,
+                                ),
+                              ),
+                            ),
+                          );
+                        }
+                        List<UsuariosRow> textUsuariosRowList = snapshot.data!;
+
+                        final textUsuariosRow = textUsuariosRowList.isNotEmpty
+                            ? textUsuariosRowList.first
+                            : null;
+
+                        return Text(
+                          valueOrDefault<String>(
+                            textUsuariosRow?.nome,
+                            'User',
                           ),
+                          style:
+                              FlutterFlowTheme.of(context).bodyMedium.override(
+                                    fontFamily: 'Inter',
+                                    color: Colors.white,
+                                    letterSpacing: 0.0,
+                                  ),
+                        );
+                      },
                     ),
                   ].divide(const SizedBox(width: 8.0)),
                 ),

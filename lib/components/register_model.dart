@@ -1,9 +1,9 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'register_page_widget.dart' show RegisterPageWidget;
+import 'register_widget.dart' show RegisterWidget;
 import 'package:flutter/material.dart';
 
-class RegisterPageModel extends FlutterFlowModel<RegisterPageWidget> {
-  ///  State fields for stateful widgets in this page.
+class RegisterModel extends FlutterFlowModel<RegisterWidget> {
+  ///  State fields for stateful widgets in this component.
 
   // State field(s) for usuarioTextField widget.
   FocusNode? usuarioTextFieldFocusNode;

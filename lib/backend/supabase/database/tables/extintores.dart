@@ -27,8 +27,8 @@ class ExtintoresRow extends SupabaseDataRow {
   set proxRecManut(DateTime? value) =>
       setField<DateTime>('Prox_Rec_Manut', value);
 
-  int? get proxRetEXT => getField<int>('Prox_Ret_EXT');
-  set proxRetEXT(int? value) => setField<int>('Prox_Ret_EXT', value);
+  String? get proxRetEXT => getField<String>('Prox_Ret_EXT');
+  set proxRetEXT(String? value) => setField<String>('Prox_Ret_EXT', value);
 
   String? get fabricante => getField<String>('Fabricante');
   set fabricante(String? value) => setField<String>('Fabricante', value);
@@ -62,9 +62,9 @@ class ExtintoresRow extends SupabaseDataRow {
   set dataDaInspecao(DateTime? value) =>
       setField<DateTime>('Data_da_Inspecao', value);
 
-  int get id => getField<int>('Id')!;
-  set id(int value) => setField<int>('Id', value);
-
   String? get numEquip => getField<String>('Num_Equip');
   set numEquip(String? value) => setField<String>('Num_Equip', value);
+
+  String get id => getField<String>('Id')!;
+  set id(String value) => setField<String>('Id', value);
 }

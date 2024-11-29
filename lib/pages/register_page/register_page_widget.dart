@@ -1,3 +1,5 @@
+import '/auth/supabase_auth/auth_util.dart';
+import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -22,11 +24,11 @@ class _RegisterPageWidgetState extends State<RegisterPageWidget> {
     super.initState();
     _model = createModel(context, () => RegisterPageModel());
 
+    _model.usuarioTextFieldTextController ??= TextEditingController();
+    _model.usuarioTextFieldFocusNode ??= FocusNode();
+
     _model.emailTextFieldTextController ??= TextEditingController();
     _model.emailTextFieldFocusNode ??= FocusNode();
-
-    _model.confirmEmailTextFieldTextController ??= TextEditingController();
-    _model.confirmEmailTextFieldFocusNode ??= FocusNode();
 
     _model.passwordTextFieldTextController ??= TextEditingController();
     _model.passwordTextFieldFocusNode ??= FocusNode();
@@ -112,10 +114,10 @@ class _RegisterPageWidgetState extends State<RegisterPageWidget> {
                       width: 400.0,
                       height: 500.0,
                       decoration: BoxDecoration(
-                        color: const Color(0xE5FFFFFF),
+                        color: Colors.white,
                         borderRadius: BorderRadius.circular(15.0),
                         border: Border.all(
-                          color: Colors.white,
+                          color: Colors.black,
                           width: 1.0,
                         ),
                       ),
@@ -123,6 +125,139 @@ class _RegisterPageWidgetState extends State<RegisterPageWidget> {
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
+                          Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                16.0, 0.0, 16.0, 0.0),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Expanded(
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Align(
+                                        alignment:
+                                            const AlignmentDirectional(-1.0, 0.0),
+                                        child: Text(
+                                          'Usuario:',
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Inter',
+                                                letterSpacing: 0.0,
+                                              ),
+                                        ),
+                                      ),
+                                      Container(
+                                        width:
+                                            MediaQuery.sizeOf(context).width *
+                                                1.0,
+                                        height: 50.0,
+                                        decoration: BoxDecoration(
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryBackground,
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
+                                          border: Border.all(
+                                            color: const Color(0xFFD9D9D9),
+                                            width: 1.0,
+                                          ),
+                                        ),
+                                        child: SizedBox(
+                                          width: 200.0,
+                                          child: TextFormField(
+                                            controller: _model
+                                                .usuarioTextFieldTextController,
+                                            focusNode: _model
+                                                .usuarioTextFieldFocusNode,
+                                            autofocus: false,
+                                            obscureText: false,
+                                            decoration: InputDecoration(
+                                              isDense: false,
+                                              labelStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Inter',
+                                                        color: Colors.black,
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                              hintText: 'Nome',
+                                              hintStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .override(
+                                                        fontFamily: 'Inter',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                              enabledBorder: OutlineInputBorder(
+                                                borderSide: const BorderSide(
+                                                  color: Color(0x00000000),
+                                                  width: 1.0,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(8.0),
+                                              ),
+                                              focusedBorder: OutlineInputBorder(
+                                                borderSide: const BorderSide(
+                                                  color: Color(0x00000000),
+                                                  width: 1.0,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(8.0),
+                                              ),
+                                              errorBorder: OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .error,
+                                                  width: 1.0,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(8.0),
+                                              ),
+                                              focusedErrorBorder:
+                                                  OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .error,
+                                                  width: 1.0,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(8.0),
+                                              ),
+                                              filled: true,
+                                              fillColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .info,
+                                              contentPadding:
+                                                  const EdgeInsetsDirectional
+                                                      .fromSTEB(16.0, 18.0, 0.0,
+                                                          16.0),
+                                            ),
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Inter',
+                                                  color: Colors.black,
+                                                  letterSpacing: 0.0,
+                                                ),
+                                            cursorColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .primaryText,
+                                            validator: _model
+                                                .usuarioTextFieldTextControllerValidator
+                                                .asValidator(context),
+                                          ),
+                                        ),
+                                      ),
+                                    ].divide(const SizedBox(height: 8.0)),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
                           Padding(
                             padding: const EdgeInsetsDirectional.fromSTEB(
                                 16.0, 0.0, 16.0, 0.0),
@@ -245,138 +380,6 @@ class _RegisterPageWidgetState extends State<RegisterPageWidget> {
                                                     .primaryText,
                                             validator: _model
                                                 .emailTextFieldTextControllerValidator
-                                                .asValidator(context),
-                                          ),
-                                        ),
-                                      ),
-                                    ].divide(const SizedBox(height: 8.0)),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                16.0, 0.0, 16.0, 0.0),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Expanded(
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: [
-                                      Align(
-                                        alignment:
-                                            const AlignmentDirectional(-1.0, 0.0),
-                                        child: Text(
-                                          'Confirme seu email:',
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                fontFamily: 'Inter',
-                                                letterSpacing: 0.0,
-                                              ),
-                                        ),
-                                      ),
-                                      Container(
-                                        width:
-                                            MediaQuery.sizeOf(context).width *
-                                                1.0,
-                                        height: 50.0,
-                                        decoration: BoxDecoration(
-                                          color: FlutterFlowTheme.of(context)
-                                              .secondaryBackground,
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
-                                          border: Border.all(
-                                            color: const Color(0xFFD9D9D9),
-                                            width: 1.0,
-                                          ),
-                                        ),
-                                        child: SizedBox(
-                                          width: 200.0,
-                                          child: TextFormField(
-                                            controller: _model
-                                                .confirmEmailTextFieldTextController,
-                                            focusNode: _model
-                                                .confirmEmailTextFieldFocusNode,
-                                            autofocus: false,
-                                            obscureText: false,
-                                            decoration: InputDecoration(
-                                              isDense: false,
-                                              labelStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Inter',
-                                                        letterSpacing: 0.0,
-                                                      ),
-                                              hintText: 'Email',
-                                              hintStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMedium
-                                                      .override(
-                                                        fontFamily: 'Inter',
-                                                        letterSpacing: 0.0,
-                                                      ),
-                                              enabledBorder: OutlineInputBorder(
-                                                borderSide: const BorderSide(
-                                                  color: Color(0x00000000),
-                                                  width: 1.0,
-                                                ),
-                                                borderRadius:
-                                                    BorderRadius.circular(8.0),
-                                              ),
-                                              focusedBorder: OutlineInputBorder(
-                                                borderSide: const BorderSide(
-                                                  color: Color(0x00000000),
-                                                  width: 1.0,
-                                                ),
-                                                borderRadius:
-                                                    BorderRadius.circular(8.0),
-                                              ),
-                                              errorBorder: OutlineInputBorder(
-                                                borderSide: BorderSide(
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .error,
-                                                  width: 1.0,
-                                                ),
-                                                borderRadius:
-                                                    BorderRadius.circular(8.0),
-                                              ),
-                                              focusedErrorBorder:
-                                                  OutlineInputBorder(
-                                                borderSide: BorderSide(
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .error,
-                                                  width: 1.0,
-                                                ),
-                                                borderRadius:
-                                                    BorderRadius.circular(8.0),
-                                              ),
-                                              filled: true,
-                                              fillColor:
-                                                  FlutterFlowTheme.of(context)
-                                                      .info,
-                                              contentPadding:
-                                                  const EdgeInsetsDirectional
-                                                      .fromSTEB(16.0, 18.0, 0.0,
-                                                          16.0),
-                                            ),
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyMedium
-                                                .override(
-                                                  fontFamily: 'Inter',
-                                                  color: Colors.black,
-                                                  letterSpacing: 0.0,
-                                                ),
-                                            cursorColor:
-                                                FlutterFlowTheme.of(context)
-                                                    .primaryText,
-                                            validator: _model
-                                                .confirmEmailTextFieldTextControllerValidator
                                                 .asValidator(context),
                                           ),
                                         ),
@@ -725,8 +728,45 @@ class _RegisterPageWidgetState extends State<RegisterPageWidget> {
                                   ),
                                 ),
                                 FFButtonWidget(
-                                  onPressed: () {
-                                    print('registerButton pressed ...');
+                                  onPressed: () async {
+                                    GoRouter.of(context).prepareAuthEvent();
+                                    if (_model.passwordTextFieldTextController
+                                            .text !=
+                                        _model
+                                            .confirmPasswordTextFieldTextController
+                                            .text) {
+                                      ScaffoldMessenger.of(context)
+                                          .showSnackBar(
+                                        const SnackBar(
+                                          content: Text(
+                                            'Passwords don\'t match!',
+                                          ),
+                                        ),
+                                      );
+                                      return;
+                                    }
+
+                                    final user = await authManager
+                                        .createAccountWithEmail(
+                                      context,
+                                      _model.emailTextFieldTextController.text,
+                                      _model
+                                          .passwordTextFieldTextController.text,
+                                    );
+                                    if (user == null) {
+                                      return;
+                                    }
+
+                                    await UsuariosTable().insert({
+                                      'uid': currentUserUid,
+                                      'email': _model
+                                          .emailTextFieldTextController.text,
+                                      'nome': _model
+                                          .usuarioTextFieldTextController.text,
+                                    });
+
+                                    context.pushNamedAuth(
+                                        'LoginPage', context.mounted);
                                   },
                                   text: 'Criar conta',
                                   options: FFButtonOptions(
