@@ -140,7 +140,7 @@ class _AdicionarPageWidgetState extends State<AdicionarPageWidget> {
                                                 0.2,
                                             height: MediaQuery.sizeOf(context)
                                                     .height *
-                                                0.08,
+                                                0.09,
                                             decoration: BoxDecoration(),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
@@ -293,7 +293,7 @@ class _AdicionarPageWidgetState extends State<AdicionarPageWidget> {
                                                 0.2,
                                             height: MediaQuery.sizeOf(context)
                                                     .height *
-                                                0.08,
+                                                0.09,
                                             decoration: BoxDecoration(),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
@@ -446,7 +446,7 @@ class _AdicionarPageWidgetState extends State<AdicionarPageWidget> {
                                                 0.2,
                                             height: MediaQuery.sizeOf(context)
                                                     .height *
-                                                0.08,
+                                                0.09,
                                             decoration: BoxDecoration(),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
@@ -606,7 +606,7 @@ class _AdicionarPageWidgetState extends State<AdicionarPageWidget> {
                                                 0.2,
                                             height: MediaQuery.sizeOf(context)
                                                     .height *
-                                                0.08,
+                                                0.09,
                                             decoration: BoxDecoration(),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
@@ -857,7 +857,7 @@ class _AdicionarPageWidgetState extends State<AdicionarPageWidget> {
                                                 0.2,
                                             height: MediaQuery.sizeOf(context)
                                                     .height *
-                                                0.08,
+                                                0.09,
                                             decoration: BoxDecoration(),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
@@ -865,7 +865,7 @@ class _AdicionarPageWidgetState extends State<AdicionarPageWidget> {
                                                   CrossAxisAlignment.start,
                                               children: [
                                                 Text(
-                                                  'Próxima manutenção (dd/MM/yyyy):',
+                                                  'Próxima manutenção (dd/MM/aaaa):',
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodyMedium
@@ -1010,7 +1010,7 @@ class _AdicionarPageWidgetState extends State<AdicionarPageWidget> {
                                                 0.2,
                                             height: MediaQuery.sizeOf(context)
                                                     .height *
-                                                0.08,
+                                                0.09,
                                             decoration: BoxDecoration(),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
@@ -1163,7 +1163,7 @@ class _AdicionarPageWidgetState extends State<AdicionarPageWidget> {
                                                 0.2,
                                             height: MediaQuery.sizeOf(context)
                                                     .height *
-                                                0.08,
+                                                0.09,
                                             decoration: BoxDecoration(),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
@@ -1323,7 +1323,7 @@ class _AdicionarPageWidgetState extends State<AdicionarPageWidget> {
                                                 0.2,
                                             height: MediaQuery.sizeOf(context)
                                                     .height *
-                                                0.08,
+                                                0.09,
                                             decoration: BoxDecoration(),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
@@ -1476,7 +1476,7 @@ class _AdicionarPageWidgetState extends State<AdicionarPageWidget> {
                                                 0.2,
                                             height: MediaQuery.sizeOf(context)
                                                     .height *
-                                                0.08,
+                                                0.09,
                                             decoration: BoxDecoration(),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
@@ -1629,7 +1629,7 @@ class _AdicionarPageWidgetState extends State<AdicionarPageWidget> {
                                                 0.2,
                                             height: MediaQuery.sizeOf(context)
                                                     .height *
-                                                0.08,
+                                                0.09,
                                             decoration: BoxDecoration(),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
@@ -1789,7 +1789,7 @@ class _AdicionarPageWidgetState extends State<AdicionarPageWidget> {
                                                 0.2,
                                             height: MediaQuery.sizeOf(context)
                                                     .height *
-                                                0.08,
+                                                0.09,
                                             decoration: BoxDecoration(),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
@@ -1942,7 +1942,7 @@ class _AdicionarPageWidgetState extends State<AdicionarPageWidget> {
                                                 0.2,
                                             height: MediaQuery.sizeOf(context)
                                                     .height *
-                                                0.08,
+                                                0.09,
                                             decoration: BoxDecoration(),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
@@ -2095,7 +2095,7 @@ class _AdicionarPageWidgetState extends State<AdicionarPageWidget> {
                                                 0.2,
                                             height: MediaQuery.sizeOf(context)
                                                     .height *
-                                                0.08,
+                                                0.09,
                                             decoration: BoxDecoration(),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,

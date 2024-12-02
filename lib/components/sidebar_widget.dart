@@ -78,7 +78,7 @@ class _SidebarWidgetState extends State<SidebarWidget> {
             ),
             Container(
               width: MediaQuery.sizeOf(context).width * 1.0,
-              height: MediaQuery.sizeOf(context).height * 0.88,
+              height: MediaQuery.sizeOf(context).height * 0.70,
               decoration: BoxDecoration(),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
@@ -218,8 +218,10 @@ class _SidebarWidgetState extends State<SidebarWidget> {
               child: InkWell(
                 splashColor: Colors.transparent,
                 focusColor: Colors.transparent,
-                hoverColor: Colors.transparent,
+                hoverColor: Color(0xFF7FB3D5),
                 highlightColor: Colors.transparent,
+                borderRadius: BorderRadius.circular(0.0),
+                customBorder: Border(),
                 onTap: () async {
                   context.pushNamed('UserPage');
                 },
@@ -238,7 +240,9 @@ class _SidebarWidgetState extends State<SidebarWidget> {
                           currentUserUid,
                         ),
                       ),
+
                       builder: (context, snapshot) {
+                        
                         // Customize what your widget looks like when it's loading.
                         if (!snapshot.hasData) {
                           return Center(
@@ -270,6 +274,7 @@ class _SidebarWidgetState extends State<SidebarWidget> {
                                     color: Colors.white,
                                     letterSpacing: 0.0,
                                   ),
+                                  
                         );
                       },
                     ),

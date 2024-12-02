@@ -137,7 +137,7 @@ class _PainelPageWidgetState extends State<PainelPageWidget> {
                                           children: [
                                             Container(
                                               width: double.infinity,
-                                              height: 362.0,
+                                              height: 300.0,
                                               child: Stack(
                                                 children: [
                                                   FlutterFlowPieChart(
@@ -149,9 +149,9 @@ class _PainelPageWidgetState extends State<PainelPageWidget> {
                                                           .toList(),
                                                       colors:
                                                           chartPieChartColorsList1,
-                                                      radius: [100.0],
+                                                      radius: [75.0],
                                                     ),
-                                                    donutHoleRadius: 40.0,
+                                                    donutHoleRadius: 30.0,
                                                     donutHoleColor:
                                                         Colors.transparent,
                                                     sectionLabelType:
@@ -329,7 +329,7 @@ class _PainelPageWidgetState extends State<PainelPageWidget> {
                                             children: [
                                               Container(
                                                 width: double.infinity,
-                                                height: 370.0,
+                                                height: 300.0,
                                                 child: FlutterFlowBarChart(
                                                   barData: [
                                                     FFBarChartData(
