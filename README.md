@@ -1,7 +1,10 @@
-# pi-metro
+# Gestão de Combate a Incêndio
+# Integrantes
+- Mitchell Santana Miyake, 23.10270-5 
+- Enrico Orlando Bernardi de Oliveira, 23.01355-9 
+- Arthur Baptista Falzetta, 23.00800-8 
+- Murilo Sucupira Sacchi, 23.10260-8 
+- Ramon Santos Pereira, 22.00049-6 
+- Cayan Neres Claro, 23.01232-3 
 
-A new Flutter project.
-
-## Getting Started
-
-FlutterFlow projects are built to run on the Flutter _stable_ release.
+# Descrição
