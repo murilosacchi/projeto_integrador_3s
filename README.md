@@ -1,4 +1,4 @@
-# Gestão de Combate a Incêndio ![image](https://github.com/user-attachments/assets/83ebfa78-6458-442d-a866-000a5322a329)  
+# Gestão de Combate a Incêndio ![metro sp icone2](https://github.com/user-attachments/assets/01549148-12b5-47f4-b927-3b46dd23880b)
 
 # Autoria
 - Mitchell Santana Miyake, 23.10270-5 
@@ -15,20 +15,36 @@ A aplicação utiliza o banco de dados relacional MySQL, gerenciado via Supabase
 
 # Descrição
 Funcionalidades Principais:
-Painel Inicial:
+
+- Painel Inicial
+  
 Exibição de gráficos dinâmicos e intuitivos que fornecem uma visão geral da situação dos equipamentos (por exemplo, extintores prestes a vencer ou vencidos).
-Gestão de Extintores:
+
+
+- Gestão de Extintores
+  
 Aba dedicada para consultar, adicionar, editar e remover extintores.
 Base de dados conectada ao MySQL, com suporte ao Supabase para operações eficientes.
-QR Code:
+
+
+- QR Code
+  
 Cada extintor possui um QR Code único.
 Usuários podem escanear os códigos com dispositivos móveis para acessar rapidamente as informações individuais do equipamento.
-Tecnologias Utilizadas:
+
+
+- Tecnologias Utilizadas:
+  
 Flutter/Dart: Para desenvolvimento multiplataforma com uma interface moderna e responsiva.
+
 MySQL: Banco de dados relacional para armazenamento seguro e estruturado.
+
 Supabase: Gerenciamento de banco de dados e integração com a aplicação.
+
 QR Code: Para identificação e acesso rápido às informações dos equipamentos.
-Objetivo do Projeto:
+
+- Objetivo do Projeto:
+  
 A aplicação busca otimizar a gestão de equipamentos de combate a incêndio, fornecendo ferramentas para monitoramento proativo e garantindo que os dispositivos estejam sempre dentro dos padrões de segurança. É ideal para o Metrô de SP que necessita gerenciar um grande número de extintores de forma eficiente e confiável.
 
 # Como Contribuir:
@@ -39,3 +55,8 @@ Essa é a versão de computador que possui de maneira complementar vínculo com 
 
 # Links Relevantes
 - [Figma](https://www.figma.com/design/jNDJQ6jvcmyRAn8YvjeCc4/PI---Metro?node-id=78-81&t=wYoA5JxwjsheBRtk-1)
+
+
+![metro sp 50 50](https://github.com/user-attachments/assets/75170002-b18f-49ee-8caa-ba65e6eef623) 
+
+
