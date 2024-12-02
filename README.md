@@ -8,3 +8,6 @@
 - Cayan Neres Claro, 23.01232-3 
 
 # Descrição
+
+# Links Relevantes
+- [Figma](https://www.figma.com/design/jNDJQ6jvcmyRAn8YvjeCc4/PI---Metro?node-id=78-81&t=wYoA5JxwjsheBRtk-1)
