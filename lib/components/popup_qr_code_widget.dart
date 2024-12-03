@@ -1,3 +1,4 @@
+import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -67,18 +68,41 @@ class _PopupQrCodeWidgetState extends State<PopupQrCodeWidget> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Container(
-                    width: MediaQuery.sizeOf(context).width * 0.25,
-                    height: MediaQuery.sizeOf(context).height * 0.4,
-                    decoration: BoxDecoration(),
+                    width: MediaQuery.sizeOf(context).width * 0.15,
+                    height: MediaQuery.sizeOf(context).height * 0.30,
+                    decoration: BoxDecoration(
+                      border: Border(),color: Color.fromARGB(255, 0, 4, 26),borderRadius: BorderRadius.circular(20.0)
+                    ),
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(8.0),
                       child: Image.network(
-                        'https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=qrcode://open/${widget!.id}',
+                        'https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=qrcode://open/${widget!.id}',
                         width: 200.0,
                         height: 200.0,
                         fit: BoxFit.scaleDown,
                       ),
                     ),
+                  ),
+                  FlutterFlowIconButton(
+                    borderColor: Color(0x01090000),
+                    borderRadius: 8.0,
+                    buttonSize: 40.0,
+                    fillColor: Color(0xFF001489),
+                    icon: Icon(
+                      Icons.download_sharp,
+                      color: FlutterFlowTheme.of(context).info,
+                      size: 24.0,
+                    ),
+                    onPressed: () async {
+                      await downloadFile(
+                        filename: valueOrDefault<String>(
+                          widget!.id,
+                          'QrCode',
+                        ),
+                        url:
+                            'https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=qrcode://open/${widget!.id}',
+                      );
+                    },
                   ),
                   FFButtonWidget(
                     onPressed: () async {
@@ -86,12 +110,13 @@ class _PopupQrCodeWidgetState extends State<PopupQrCodeWidget> {
                     },
                     text: 'Voltar',
                     options: FFButtonOptions(
+                      
                       height: 40.0,
                       padding:
                           EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                       iconPadding:
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                      color: FlutterFlowTheme.of(context).azulMetro,
+                      color: Color(0xFF001489),
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(
                                 fontFamily: 'Inter Tight',
